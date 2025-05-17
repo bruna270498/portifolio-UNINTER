@@ -229,3 +229,10 @@ h3 {
 .redes-sociais img:hover {
   transform: scale(1.1);
 }
+
+.msg-enviada{
+  background-color: #d4edda;
+  color: #155724;
+  border-radius: 5px;
+  text-align: center;
+}
