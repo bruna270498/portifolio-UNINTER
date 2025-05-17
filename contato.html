@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="cabecalho">
+      <h3 id="meuNome">Bruna Almeida Soares</h3>
+      <nav id="menu">
+        <ul>
+          <li><a href="index.html">Sobre Mim</a></li>
+          <li><a href="formacao.html">Formação Acadêmica</a></li>
+          <li><a href="portifolio.html">Portifólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <section id="section-pai">
+  <h1>Contato</h1>
+
+  <div class="container-contato">
+    <form class="formulario" method="POST" id="form-contato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="contato">Telefone:</label>
+      <input type="tel" id="contato" name="contato" required>
+
+      <label for="assunto">Assunto:</label>
+      <input type="text" id="assunto" name="assunto" required>
+
+      <label for="descricao">Descrição:</label>
+      <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <div class="redes-sociais">
+      <p>Se você deseja saber mais sobre mim, fique à vontade para me encontrar nas seguintes redes sociais:</p>
+      <ul>
+        <li>
+          <a href="https://www.linkedin.com/in/bruna-almeida-soares/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/bruna270498" target="_blank">
+             <img src="https://cdn-icons-png.flaticon.com/512/733/733553.png" alt="GitHub">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+  <script>
+    //Utilizando o DOM para interagir com o formulário
+    // e validar os campos
+    document.addEventListener('DOMContentLoaded', function () {
+    // Seleciona o formulário e os campos de entrada
+    // utilizando o método getElementById
+    const form = document.getElementById('form-contato');
+    const nomeInput = document.getElementById('nome');
+    const assuntoInput = document.getElementById('assunto');
+    const descricaoInput = document.getElementById('descricao');
+    const telefoneInput = document.getElementById('contato');
+
+    if (form) {
+        // Adiciona um evento de escuta para o envio do formulário
+        form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const nome = nomeInput.value.trim();
+        const assunto = assuntoInput.value.trim();
+        const descricao = descricaoInput.value.trim();
+        const telefone = telefoneInput.value.trim();
+        // Validando se o campo nome tem menos de 4 caracteres
+        // se o campo tiver menos aciona o alerta
+        if (nome.length < 4) {
+          alert('O nome deve conter pelo menos 4 caracteres.');
+          nomeInput.focus();
+          return;
+        }
+
+        // Validando se o campo nome tem menos de 7 caracteres
+        // se o campo tiver menos aciona o alerta
+        if (assunto.length < 7) {
+          alert('O assunto deve conter pelo menos 7 caracteres.');
+          assuntoInput.focus();
+          return;
+        }
+
+        if (descricao.length < 10) {
+          alert('A descrição deve conter pelo menos 10 caracteres.');
+          assuntoInput.focus();
+          return;
+        }
+
+        // Validando o campo telefone
+        function validarTelefone() {
+            // Remove espaços em branco do início e do fim do telefone
+            const apenasNumeros = /^\d+$/;
+            if (!apenasNumeros.test(telefone)) {
+                // Se o valor do telefone não for numérico, exibe um alerta e retorna false
+                alert("Por favor, insira apenas números no campo de telefone.");
+                return false;
+            }
+            // Verifica se o telefone tem 10 ou 11 dígitos
+            // Se não tiver, exibe um alerta e retorna false
+            if (telefone.length !== 10 && telefone.length !== 11) {
+                alert("O número de telefone deve conter 10 ou 11 dígitos (sem traços ou espaços).");
+                return false;
+            }
+            return true;
+        }
+        // Chama a função de validação do telefone
+        // // Se a validação falhar, foca no campo de telefone e retorna
+        if (!validarTelefone()) {
+            telefoneInput.focus();
+            return;
+        }
+        // Esconde o formulário após o envio
+        form.style.display = 'none';
+        // e mostra uma mensagem de sucesso
+        const msg = document.createElement('p');
+        const msg2 = document.createElement('p');
+        msg.className = 'msg-enviada';
+        msg.textContent = 'E-mail enviado! Obrigada por entrar em contato!';
+        msg2.className = 'msg-enviada';
+        msg2.textContent = 'Em breve, entrarei em contato com você.';
+        form.parentNode.insertBefore(msg, form);
+        form.parentNode.insertBefore(msg2, form);
+
+        // Após 1 minuto, limpa e reexibe o formulário
+        setTimeout(() => {
+          msg.remove();
+          form.reset();
+          // Reexibe o formulário
+          form.style.display = '';
+      }, 6000);
+      });
+    }})
+  </script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* Estilo base do body */
+body {
+  background-color: #f3e7eb;
+  font-family: 'Playfair Display', serif;
+  margin: 0;
+  padding-top: 60px; /* Espaço para o header fixo */
+}
+
+/* Nome estilizado */
+#meuNome {
+  font-style: italic;
+  font-size: 20px;
+}
+
+/* Cabeçalho fixo */
+header {
+  background-color: #f3e7eb;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  border: 2px solid #000;
+}
+
+/* Layout do cabeçalho */
+.cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin-left: 7%;
+}
+
+/* Menu de navegação */
+#menu ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Estilo geral das seções */
+section {
+  border: 3px solid #000;
+  margin: 5%;
+  background-color: rgb(255, 254, 252);
+}
+
+/* Títulos */
+h1 {
+  font-size: 40px;
+  margin: 3%;
+  margin-top: 20px;
+}
+
+/* Seção sobre mim */
+#sobre-mim {
+  display: flex;
+}
+
+#minha-foto {
+  width: 40%;
+  height: 40%;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+/* Texto e subtítulos */
+p, h3, h4 {
+  font-size: 20px;
+  margin: 3%;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+/* Bloco de formação */
+.formacao-item {
+  display: flex;
+  margin-bottom: 5%;
+  padding: 3%;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  border-radius: 1%;
+}
+
+.formacao-filho {
+  width: 100%;
+}
+
+#formacao {
+  margin: 5%;
+}
+
+/* Título centralizado */
+.h1 {
+  text-align: center;
+}
+
+/* Link do repositório */
+.link-repositorio {
+  text-decoration: none;
+  color: #007BFF;
+  font-size: 20px;
+  margin-left: 3%;
+  text-align: center;
+  transition: color 0.3s ease;
+}
+
+.link-repositorio:hover {
+  color: #b30054;
+  text-decoration: underline;
+}
+
+/* Seção de repositório */
+#repositorio {
+  margin: 3%;
+  text-align: center;
+}
+
+/* Seção de contato */
+#section-pai {
+  background-color: #f3e7eb;
+  border: none;
+  font-family: 'Segoe UI', sans-serif;
+  color: #0a0a0a;
+}
+
+/* Título da seção de contato */
+#section-pai h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Container do formulário e redes */
+.container-contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Estilo do formulário */
+.formulario {
+  background-color: #e3e2e7;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* sombra maior */
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.formulario label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.formulario input,
+.formulario textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.formulario input:focus,
+.formulario textarea:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.formulario button {
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.formulario button:hover {
+  background-color: #0056b3;
+}
+
+/* Redes sociais */
+.redes-sociais {
+  text-align: center;
+  max-width: 600px;
+}
+
+/* Lista horizontal das redes */
+.redes-sociais ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.redes-sociais li {
+  display: inline-block;
+}
+
+/* Ícones das redes */
+.redes-sociais img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s;
+}
+
+.redes-sociais img:hover {
+  transform: scale(1.1);
+}
